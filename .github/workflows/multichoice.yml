@@ -1,0 +1,21 @@
+name: Multi Choice POC
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: select packages
+        options: 
+        - go-service1
+        - go-service2
+        - py-service1
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Display Message
+        run: echo "Testing"
